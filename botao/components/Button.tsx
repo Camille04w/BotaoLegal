@@ -1,5 +1,6 @@
 import React from 'react'
 import { TouchableOpacity, Text, StyleSheet } from 'react-native'
+import { useFonts, Poppins_400Regular } from '@expo-google-fonts/poppins';
 
 export default function Button({title, onPress}){
 
@@ -15,14 +16,15 @@ export default function Button({title, onPress}){
 const styles = StyleSheet.create({
     button: {
         marginTop: 10,
-        backgroundColor: 'green',
+        backgroundColor: 'blue',
         padding: 10,
-        borderRadius: 12,
+        borderRadius: 30,
         alignItems: 'center',
+        width:332,
     },
     buttonText: {
         color: '#FFFFFF',
-        fontSize: 20,
+        fontSize: 24,
         fontWeight:'bold',
     }
 });
