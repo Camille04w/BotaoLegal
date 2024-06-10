@@ -14,9 +14,8 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <div>
+
       <Text style={styles.title}>MapMaster</Text>
-      </div>
       <Image style={styles.image} source={require('../../assets/images/imagem1.png')} />
       <Text style={styles.text} >Encontre o seu destino com apenas um toque</Text>
       <Button title="Ver localização" onPress={Clicar} />
