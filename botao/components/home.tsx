@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
+import Sobre from './sobre'
 
 export default function App() {
 
@@ -10,16 +11,17 @@ export default function App() {
     if (page === 'home'){
       return (
         <View style={styles.container}>
-          <View style={styles.title}>
-            <Text style={styles.logo}>MapMaster</Text>
+          <Text style={styles.title}>MapMaster</Text>
+          <View style={styles.containerImagem}>
+          <Image style={styles.imagem} source={require('../assets/images/imagem1.png')}/>
           </View>
-          <View style={styles.corpo}>
-            <Text style={styles.text} >Encontre o seu destino com apenas um toque</Text>
+            <Text style={styles.text} >Encontre o seu destino com apenas um {''}
+              <Text style={styles.hover}>toque</Text>
+            </Text>
             <TouchableOpacity style={styles.button} onPress={()=> setPage('sobre')}>
               <Text style={styles.button}>Ver localização</Text>
             </TouchableOpacity>
           </View>
-        </View>
       );
     } else if(page==='sobre'){
       return <Sobre />
@@ -27,7 +29,7 @@ export default function App() {
   };
 
   return <View style={styles.buttonText}>{renderPage()}</View>
-  
+ 
 }
 
 const styles = StyleSheet.create({
@@ -36,8 +38,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF',
     fontFamily: 'Poppins_400Regular',
-    
-
+  },
+  containerImagem:{
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   corpo: {
     justifyContent: 'flex-start',
@@ -53,8 +57,8 @@ const styles = StyleSheet.create({
     color: '#000',
     marginTop: 67,
   },
-  image: {
-    marginTop: 90,
+  imagem: {
+    marginTop: 20,
     width: 320,
     height: 240,
 
@@ -71,7 +75,14 @@ const styles = StyleSheet.create({
   title: {
     display: 'flex',
     padding: 40,
-    marginLeft: 60,
+    marginLeft: 30,
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 0,
+  },
+  hover: {
+    color: '#000AFF',
+    fontWeight: 'bold',
   },
   button: {
     width:300,
